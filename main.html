@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nandoz Odds Milestone Tracker</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#0a1f1e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="app-wrapper" id="appWrapper">
+    <aside class="sidebar" id="sidebar" aria-label="Actions and log">
+      <div class="sidebar-header">
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle sidebar">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <h3 class="sidebar-title">NANDOZ</h3>
+        <button class="close-sidebar" id="closeSidebar" type="button" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <!-- Keep profile outside the scroll area so the pop-card can layer above -->
+      <div class="sidebar-profile">
+        <div class="user-section" id="userSection" tabindex="0" role="button" aria-label="User card">
+          <div class="user-info">
+            <div class="user-icon" aria-hidden="true">
+              <img src="./assets/user.png" alt="" />
+            </div>
+            <div class="user-text">
+              <h4>NANDOZ BETTOR</h4>
+              <p>Milestone Staker</p>
+            </div>
+          </div>
+
+          <div class="debit-card" id="debitCard" aria-label="Staking card">
+            <div class="card-header">
+              <span class="card-title">STAKING CARD</span>
+              <span class="card-chip" aria-hidden="true">💳</span>
+            </div>
+            <div class="debit-row">
+              <span class="debit-label">LEVEL</span>
+              <span class="debit-value" id="debitLevel">—</span>
+            </div>
+            <div class="debit-row">
+              <span class="debit-label">STAKE</span>
+              <span class="debit-value large" id="debitStake">$—</span>
+            </div>
+            <div class="debit-row">
+              <span class="debit-label">RANGE</span>
+              <span class="debit-value" id="debitRange">—</span>
+            </div>
+            <div class="debit-row">
+              <span class="debit-label">TARGET</span>
+              <span class="debit-value" id="debitTarget">—</span>
+            </div>
+            <div class="debit-row">
+              <span class="debit-label">BANKROLL</span>
+              <span class="debit-value large" id="debitBankroll">$—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-content" aria-label="Sidebar content">
+        <div class="sidebar-section compact">
+          <h4>💰 BANKROLL</h4>
+          <div class="bankroll-row">
+            <label class="mini-label" for="bankrollInput">Amount</label>
+            <input class="mini-input" type="number" id="bankrollInput" step="0.01" placeholder="1.00" value="1.00" inputmode="decimal">
+          </div>
+          <div class="btn-row">
+            <button class="btn small primary corner" id="checkBtn" type="button">Check</button>
+            <button class="btn small corner" id="quickResetBtn" type="button">Reset</button>
+          </div>
+          <div class="mini-metrics" id="levelDisplayCard">
+            <div class="metric">
+              <div class="k">LEVEL</div>
+              <div class="v" id="currentLevel">—</div>
+            </div>
+            <div class="metric">
+              <div class="k">STAKE</div>
+              <div class="v" id="currentStake">$—</div>
+            </div>
+            <div class="metric">
+              <div class="k">RANGE</div>
+              <div class="v" id="currentRange">—</div>
+            </div>
+            <div class="metric">
+              <div class="k">TARGET</div>
+              <div class="v" id="nextTarget">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>🎯 QUICK ACTIONS</h4>
+          <button class="btn small corner" id="quickCheckBtn" type="button">Check current level</button>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>📝 ADD BET RESULT (MANUAL)</h4>
+          <div class="log-entry">
+            <div class="log-input-group">
+              <input class="mini-input" type="number" id="betStakeInput" placeholder="Stake" step="0.01" inputmode="decimal">
+              <select id="betResultSelect" aria-label="Bet result">
+                <option value="win">WIN (+Stake)</option>
+                <option value="loss">LOSS (-Stake)</option>
+              </select>
+            </div>
+            <div class="log-actions">
+              <button class="btn tiny corner" id="addBetBtn" type="button">Add</button>
+              <button class="btn tiny primary corner" id="applyBetBtn" type="button">Apply</button>
+            </div>
+            <small class="helper-text">Enter stake → Apply updates bankroll</small>
+          </div>
+          <div class="log-list" id="betLogList">
+            <div class="empty-log">No bets logged yet</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>📌 NOTES</h4>
+          <textarea class="notes-textarea" id="userNotes" rows="3" placeholder="Write match notes, reminders, strategies..."></textarea>
+          <button class="btn tiny corner" id="saveNotesBtn" type="button">Save</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="main-header">
+          <img class="main-logo" src="./assets/one-shoot-1.png" alt="Nandoz Odds logo">
+          <div class="main-title">
+            <div class="t">Nandoz Odds</div>
+            <div class="s">Milestone levels</div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <h3 class="table-title">📋 MILESTONE LEVELS</h3>
+          <table class="milestone-table" id="milestoneTable">
+            <thead>
+              <tr>
+                <th>LEVEL</th>
+                <th>🎯 STAKE</th>
+                <th>💰 BANKROLL RANGE</th>
+                <th>📈 NEXT TARGET</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="developer-credit">
+          Nandoz Odds Milestone Tracker
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./scripts/app.js" defer></script>
+</body>
+</html>

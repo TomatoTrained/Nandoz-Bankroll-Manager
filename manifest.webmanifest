@@ -1,0 +1,16 @@
+{
+  "name": "Nandoz Bankroll Checker",
+  "short_name": "Nandoz",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a1f1e",
+  "theme_color": "#0a1f1e",
+  "icons": [
+    {
+      "src": "./assets/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

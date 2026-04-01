@@ -1,16 +1,16 @@
 (() => {
-  const levelsData = [
-    { level: 1, stake: 1, bankrollMin: 1, bankrollMax: 19, nextTarget: 20, rangeDisplay: "$1 – $19" },
-    { level: 2, stake: 2, bankrollMin: 20, bankrollMax: 49, nextTarget: 50, rangeDisplay: "$20 – $49" },
-    { level: 3, stake: 3, bankrollMin: 50, bankrollMax: 99, nextTarget: 100, rangeDisplay: "$50 – $99" },
-    { level: 4, stake: 5, bankrollMin: 100, bankrollMax: 199, nextTarget: 200, rangeDisplay: "$100 – $199" },
-    { level: 5, stake: 8, bankrollMin: 200, bankrollMax: 399, nextTarget: 400, rangeDisplay: "$200 – $399" },
-    { level: 6, stake: 13, bankrollMin: 400, bankrollMax: 799, nextTarget: 800, rangeDisplay: "$400 – $799" },
-    { level: 7, stake: 21, bankrollMin: 800, bankrollMax: 1599, nextTarget: 1600, rangeDisplay: "$800 – $1,599" },
-    { level: 8, stake: 34, bankrollMin: 1600, bankrollMax: 3199, nextTarget: 3200, rangeDisplay: "$1,600 – $3,199" },
-    { level: 9, stake: 55, bankrollMin: 3200, bankrollMax: 6399, nextTarget: 6400, rangeDisplay: "$3,200 – $6,399" },
-    { level: 10, stake: 89, bankrollMin: 6400, bankrollMax: Infinity, nextTarget: Infinity, rangeDisplay: "$6,400+" },
-  ];
+ const levelsData = [
+    { level: 1, stake: 1, bankrollMin: 1, bankrollMax: 5, nextTarget: 6, rangeDisplay: "$1 – $5" },
+    { level: 2, stake: 2, bankrollMin: 6, bankrollMax: 15, nextTarget: 16, rangeDisplay: "$6 – $15" },
+    { level: 3, stake: 3, bankrollMin: 16, bankrollMax: 35, nextTarget: 36, rangeDisplay: "$16 – $35" },
+    { level: 4, stake: 5, bankrollMin: 36, bankrollMax: 75, nextTarget: 76, rangeDisplay: "$36 – $75" },
+    { level: 5, stake: 8, bankrollMin: 76, bankrollMax: 155, nextTarget: 156, rangeDisplay: "$76 – $155" },
+    { level: 6, stake: 13, bankrollMin: 156, bankrollMax: 315, nextTarget: 316, rangeDisplay: "$156 – $315" },
+    { level: 7, stake: 21, bankrollMin: 316, bankrollMax: 635, nextTarget: 636, rangeDisplay: "$316 – $635" },
+    { level: 8, stake: 34, bankrollMin: 636, bankrollMax: 1275, nextTarget: 1276, rangeDisplay: "$636 – $1,275" },
+    { level: 9, stake: 55, bankrollMin: 1276, bankrollMax: 2555, nextTarget: 2556, rangeDisplay: "$1,276 – $2,555" },
+    { level: 10, stake: 89, bankrollMin: 2556, bankrollMax: 5115, nextTarget: 5116, rangeDisplay: "$2,556 – $5,115" }
+];
 
   const $ = (id) => document.getElementById(id);
 

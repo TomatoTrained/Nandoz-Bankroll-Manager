@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="One Shoot 1 Background">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e6f4ff"/>
+    </linearGradient>
+    <radialGradient id="city" cx="12%" cy="18%" r="70%">
+      <stop offset="0" stop-color="#6CABDD" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#6CABDD" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#6CABDD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="green" cx="82%" cy="78%" r="75%">
+      <stop offset="0" stop-color="#24c26a" stop-opacity="0.28"/>
+      <stop offset="0.6" stop-color="#24c26a" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#24c26a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .035 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#base)"/>
+  <rect width="1600" height="900" fill="url(#city)"/>
+  <rect width="1600" height="900" fill="url(#green)"/>
+
+  <!-- wave -->
+  <path d="M0 640C220 560 420 740 640 670C900 590 1040 720 1240 680C1400 650 1500 600 1600 560V900H0Z"
+        fill="#6CABDD" opacity="0.16"/>
+  <path d="M0 720C260 650 420 820 690 760C930 710 1120 820 1340 770C1480 740 1550 700 1600 670V900H0Z"
+        fill="#24c26a" opacity="0.10"/>
+
+  <!-- diagonal lines -->
+  <g opacity="0.10">
+    <path d="M-200 980L980-200" stroke="#2b83c6" stroke-width="3"/>
+    <path d="M0 980L1180-200" stroke="#2b83c6" stroke-width="3"/>
+    <path d="M200 980L1380-200" stroke="#2b83c6" stroke-width="3"/>
+    <path d="M400 980L1580-200" stroke="#2b83c6" stroke-width="3"/>
+  </g>
+
+  <!-- subtle grain -->
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.55"/>
+</svg>

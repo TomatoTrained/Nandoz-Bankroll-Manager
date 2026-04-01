@@ -1,0 +1,12 @@
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:"Inter",-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","SF Pro Rounded","Helvetica Neue",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#071a28;background:linear-gradient(rgba(246,251,255,.74),rgba(227,242,255,.80)),url("../assets/one-shoot-1.png");background-size:cover;background-position:center;background-attachment:fixed;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.landing{min-height:100%;display:grid;place-items:center;padding:28px 16px}
+.landing-card{width:min(620px,100%);border-radius:22px;padding:18px 18px 14px;background:rgba(255,255,255,.86);border:1px solid rgba(43,131,198,.18);box-shadow:0 22px 60px rgba(7,26,40,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{display:flex;gap:14px;align-items:center}
+.brand-logo{width:64px;height:64px;border-radius:16px;background:rgba(255,255,255,.90);border:1px solid rgba(43,131,198,.16);padding:8px;flex:0 0 auto;object-fit:contain}
+.brand-title{font-weight:750;letter-spacing:-.02em;font-size:1.15rem;line-height:1.1}
+.brand-subtitle{opacity:.8;font-size:.9rem;margin-top:4px}
+.landing-actions{margin-top:16px;display:grid;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.01em;border:1px solid rgba(43,131,198,.18);background:rgba(255,255,255,.92);color:#071a28}
+.btn.primary{background:linear-gradient(135deg,#24c26a,#14a957);border-color:rgba(36,194,106,.44);color:#052011;box-shadow:0 12px 26px rgba(7,26,40,.10)}
+.btn.primary:focus{outline:3px solid rgba(108,171,221,.22);outline-offset:3px}
+.hint{font-size:.85rem;opacity:.78}
